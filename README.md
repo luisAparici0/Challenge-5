@@ -5,6 +5,7 @@ This document explains the modifications made to the PlayerMovement.cs script to
 <br>
 
 ##Jump
+
 ###Added fields
 
 These fields control jump height, gravity strength, the CharacterController component, and internal variables required for jumping.
@@ -20,6 +21,7 @@ Inside the Update() method, gravity and jump handling were added
 <br>
 
 ##Sprint
+
 ###Added Fields
 
 These fields define the sprint speed multiplier and a flag to check if the player is currently sprinting.
