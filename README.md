@@ -83,7 +83,7 @@ Next, we'll assign a 'Rigidbody' component to our character to implement physics
 <br>
 
 
-*C# Script*
+###C# Script
 
 Then, we'll go to our 'PlayerMovement' script and do the following:
 <br>
@@ -125,16 +125,41 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
 <br>
 <br>
 
-*C# Script PlayerMovement*
+###C# Script PlayerMovement
 <br>
 <img width="1329" height="787" alt="PlayerMovement C# Script 1" src="https://github.com/user-attachments/assets/5316d19f-ffaf-4830-90f8-eb8d00b3b84e" />
 <br>
 <img width="1536" height="485" alt="PlayerMovement C# Script 2" src="https://github.com/user-attachments/assets/c9161bf6-e2db-46c9-966b-c8a7467f9570" />
 
 
-*C# Script Gameplay*
+###C# Script Gameplay
 <br>
 ![C# Gameplay](https://github.com/user-attachments/assets/c7fa1fbb-1261-4dff-a638-6de583112ce6)
+
+
+
+### Visual Graphs:
+
+Next task is to execute the same player actions but using Visual Graphs, including the already established Move, Look and Fire actions.  We can use the same Player Input action used for our C# Script.  First, the variables that will be used for our Visual Graphs were created.  
+<br>
+<img width="616" height="577" alt="Variables" src="https://github.com/user-attachments/assets/90e1ca72-6d91-4d2d-96d9-54551db56285" />
+
+Move Action:
+1. Erase both Start() and Update() nodes.
+2. Place 'On Input System Event Vector 2' node in 
+	a. Assign 'Move' action in 'Input Action' box
+3. Place 2 Vector 2 Nodes Get X and Y in graph.
+4. Connect output of 'On Input System Event Vector 2' to their inputs
+5. Place 2 sets of 'MovementSpeed' and 'SprintValue' variables.  
+6. Multiply each set with Get X and Get Y and then multiply the results individually
+	by Get Delta Time.
+7. Place 'Transform Translate' and connect flow from 'On Input System Event Vector 2' and Get X result to x-component and Get Y result to the z-component. 
+
+<br>
+![Movement Graph](https://github.com/user-attachments/assets/d52d04c9-70bf-41dc-8740-041d4aba0496)
+<br>
+
+
 
 
 
