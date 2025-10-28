@@ -237,7 +237,7 @@ This graph defines the behavior when moving mouse and rotating player model.
 <br>
 
 - Place 'On Input System Event Vector Button' node in Script Graph
-  - Assign 'Jump' action in 'Input Action' box 'On Input System Event Vector 2'
+  - Assign 'Jump' action in 'Input Action' box 'On Input System Event Button'
   - Assign 'On Pressed'
 - Place boolean variable 'Contact' set to True, along with a boolean value node set to False.
 - Place 'if-else' node and connect 'On Input System Event Vector Button' flow output to its flow input.
@@ -247,6 +247,11 @@ This graph defines the behavior when moving mouse and rotating player model.
 - Place 'Rigidbody - Add Force' node and connect 'Set Variable' flow output to its flow input.
 - Place GetVariable for object variable 'Height' and connect its output to Rigidbody's y-component node.
 
+<br>
+Next, we need a graph to set our 'Contact' variable to True whenever it comes into contact with a collider again.  For this, a separate graph is created using the 'On Collision Enter' node.  Place 'On Collision Enter' node and a boolean value variable set to True below the 'Jump' graph.  Following, place a Set Variable node for 'Contact' and connect the flow output of the 'On Collision Enter' node to the Set Variable flow input and the boolean value to the Set Variable value input.  
+
+
+This graph defines the jump action based on player collision.
 <br>
 <img width="1201" height="570" alt="Jump" src="https://github.com/user-attachments/assets/3f9fc1be-e33b-4fd8-81b8-054e014176aa" />
 
@@ -260,15 +265,17 @@ This graph defines the behavior when moving mouse and rotating player model.
 *Fire Action*
 <br>
 
-- Place 'On Input System Event Vector 2' node in Script Graph
-  - Assign 'Look' action in 'Input Action' box 'On Input System Event Vector 2'
+- Place 'On Input System Event Button' node in Script Graph
+  - Assign 'Fire' action in 'Input Action' box 'On Input System Event Button'
   - Assign 'On Pressed'
-- Place Vector 2 Get X node and connect 'On Input System Event Vector 2' vector 2 value output to its input.
-- Place GetVariable for 'LookSpeed' variable and multiply this variable value with the Vector 2 Get X node.
-- Multiply this result with Get Delta Time.
-- Place Transform Rotate and connect 'On Input System Event Vector 2' flow output to its flow input and multiplication result to Y-angle component.
+- Place two Get Variable objects for 'Bullet' and 'ShootPointV' game objects
+- Place Get Position and Get Rotation nodes on the graph and connect 'ShootPointV' output to their inputs.
+- Place a Component Instantiate node on the graph.
+- Connect 'On Input System Event Button' flow output to Component Instantiate flow input.
+- Connect 'Bullet' output to Component Instantiate 'Original' input.
+- Connect Get Position and Get Rotation outputs to the designated inputs on Component Instantiate.
 
-This graph defines the behavior when moving mouse and rotating player model. 
+
 
 <br>
 <img width="740" height="433" alt="Fire" src="https://github.com/user-attachments/assets/0591fa57-b04f-4ab8-bd9f-25c45e09d30d" />
