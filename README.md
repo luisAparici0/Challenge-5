@@ -146,8 +146,12 @@ Next task is to execute the same player actions but using Visual Graphs, includi
 
 Move Action:
 1. Erase both Start() and Update() nodes.
-2. Place 'On Input System Event Vector 2' node in 
-	a. Assign 'Move' action in 'Input Action' box
+2. Place 'On Input System Event Vector 2' node in
+
+<br> 
+	Assign 'Move' action in 'Input Action' box
+<br>
+
 3. Place 2 Vector 2 Nodes Get X and Y in graph.
 4. Connect output of 'On Input System Event Vector 2' to their inputs
 5. Place 2 sets of 'MovementSpeed' and 'SprintValue' variables.  
@@ -156,8 +160,9 @@ Move Action:
 7. Place 'Transform Translate' and connect flow from 'On Input System Event Vector 2' and Get X result to x-component and Get Y result to the z-component. 
 
 <br>
-![Movement Graph](https://github.com/user-attachments/assets/d52d04c9-70bf-41dc-8740-041d4aba0496)
-<br>
+![Movement Graph](https://github.com/user-attachments/assets/ec86cbc5-896d-4b8d-a26d-a744a494f53e)
+
+
 
 
 
