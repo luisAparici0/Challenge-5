@@ -74,9 +74,52 @@ Our player movement, rotation and firing actions were created and executed in cl
 Both of these can be easily implemented with the new Input System Package messages OnJump() and OnSprint(), which don't require additional coding to set up as opposed to custom events. 
 <br><br>
 
+Next, we'll assign a 'Rigidbody' component to our character to implement physics.  This will allow us to use the 'Gravity' parameter to simulate jumping.  Make sure your player model and environment objects have colliders so that your character doesn't fall through them after applying the Rigidbody.  Finally, freeze rotation of our player in the 'x' and 'z' direction to ensure our model doesn't tip over when interacting with colliders in the game.  
 
 
-*Base Plane Vertices*
+<br>
+<img width="531" height="332" alt="Rigidbody Inspector" src="https://github.com/user-attachments/assets/802aeb56-8199-4a35-9c92-9f05c5ea6425" />
+<br>
+<br>
+
+
+*C# Script*
+
+Then, we'll go to our 'PlayerMovement' script and do the following:
+<br>
+
+1. Create 'private float height' and apply [SerializeField]  
+2. Create 'public void OnJump() and have its parameter be 'InputValue button'
+3. Create 'private bool contact' for 'Player 1' collider detection
+3. Create 'Rigidbody _rigidbody' to apply force in y-direction for jump.
+4. Initialize _rigidbody in Awake()
+	_rigidbody = GetComponent<Rigidbody>();
+5. public void OnJump(InputValue button)
+    {
+        if (contact)  
+        {
+            _rigidbody.AddForce(0,height,0);
+        }
+    }
+   <br>
+
+6. Use 'OnCollisionStay()' to check if 'Player 1' is in contact with a collider and 'OnCollisionExit()' to detect when 'Player 1' collider is not in contact with another collider.  These will change the value of 'contact' to indicate OnJump() method when to jump.
+
+* private void OnCollisionStay(Collision collision)   
+{ contact = true; } 
+
+* private void OnCollisionExit(Collision collision)   
+{ contact = false; }    
+
+7. Next, we're tasked to add a sprint action for our character.  This can be done using the OnSprint() message.  Create 'private float sprint' and serialize it and a 'private float sprintValue', which will be use to multiply movement values in transform.Translate in x-z directions.  Then, write the following code in OnSprint():
+
+    public void OnSprint(InputValue button)     
+    {
+        if (button.isPressed){ sprintValue = sprint;}       
+        else{sprintValue = 1;}      
+    }
+
+8. Multiply 'sprintValue' in transform.Translate's x and z components.
 
 Merge the faces presented in the following image and extrude them at a distance of 15.  Afterwards, translate vertices from bottom of extruded surface edges to the outer edge of the created plane using the Vertex Position Editor offered by Pro-Builder.  
 
