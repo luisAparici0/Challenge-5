@@ -125,12 +125,13 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
 
 ### C# Script PlayerMovement
 <br>
+<br>
 <img width="1329" height="787" alt="PlayerMovement C# Script 1" src="https://github.com/user-attachments/assets/5316d19f-ffaf-4830-90f8-eb8d00b3b84e" />
 <br>
 <img width="1536" height="485" alt="PlayerMovement C# Script 2" src="https://github.com/user-attachments/assets/c9161bf6-e2db-46c9-966b-c8a7467f9570" />
 
 
-###C# Script Gameplay
+### C# Script Gameplay
 <br>
 ![C# Gameplay](https://github.com/user-attachments/assets/c7fa1fbb-1261-4dff-a638-6de583112ce6)
 
@@ -147,7 +148,8 @@ Next task is to execute the same player actions but using Visual Graphs, includi
 
 - Erase both Start() and Update() nodes.
 - Place 'On Input System Event Vector 2' node in
-  - Assign 'Move' action in 'Input Action' box 
+  - Assign 'Move' action in 'Input Action' box
+  - Assign 'On Hold'
 - Place 2 Vector 2 Nodes Get X and Y in graph.
 - Connect output of 'On Input System Event Vector 2' to their inputs
 - Place 2 sets of 'MovementSpeed' and 'SprintValue' variables.
@@ -158,6 +160,63 @@ Next task is to execute the same player actions but using Visual Graphs, includi
 
 <br>
 ![Movement Graph](https://github.com/user-attachments/assets/ec86cbc5-896d-4b8d-a26d-a744a494f53e)
+<br>
+
+
+*Sprint Action Pressed*
+<br>
+
+- Place 'On Input System Event Button' node in Script Graph
+  - Assign 'Sprint' action in 'Input Action' box
+  - Assign 'On Pressed'
+- Place a boolean value node as *true* and Set a boolean variable called 'Sprint'
+- Connect flow input from 'On Input System Event Button' to 'Set Variable' for boolean variable 'Sprint'
+- Connect boolean value to Set Variable input for 'Sprint'.
+- Place an 'if-else' node and connect flow from this 'Set Variable' to 'if-else' node.
+- Create an integer value node with sprint multiplier value
+- Modify 'SprintValue' with a Set Variable and connect flow output from 'if-else' statement to Set Variable for 'SprintValue' and integer value node to this 'Set Variable'
+
+This graph defines the behavior when the sprint button is being pressed. 
+<br>
+
+
+*Sprint Action Released*
+<br>
+
+- Place 'On Input System Event Button' node in Script Graph
+  - Assign 'Sprint' action in 'Input Action' box
+  - Assign 'On Released'
+- Place a boolean value node as *false* and Set a boolean variable called 'Sprint'
+- Connect flow input from 'On Input System Event Button' to 'Set Variable' for boolean variable 'Sprint'
+- Connect boolean value to Set Variable input for 'Sprint'.
+- Place an 'if-else' node and connect flow from this 'Set Variable' to 'if-else' node.
+- Create an integer value node with value 1
+- Modify 'SprintValue' with a Set Variable and connect flow output from 'if-else' statement to Set Variable for 'SprintValue' and integer value node to this 'Set Variable'
+
+This graph defines the behavior when the sprint button is released and reverts movement speed to its default.  
+
+<br>
+![Sprint Pressed Released](https://github.com/user-attachments/assets/3ac65627-87e3-4253-a8fb-b8dda6f05cd3)
+<br>
+
+
+*Look Action*
+<br>
+
+- Place 'On Input System Event Vector 2' node in Script Graph
+  - Assign 'Look' action in 'Input Action' box 'On Input System Event Vector 2'
+  - Assign 'On Pressed'
+- Place Vector 2 Get X node and connect 'On Input System Event Vector 2' vector 2 value output to its input.
+- Place GetVariable for 'LookSpeed' variable and multiply this variable value with the Vector 2 Get X node.
+- Multiply this result with Get Delta Time.
+- Place Transform Rotate and connect 'On Input System Event Vector 2' flow output to its flow input and multiplication result to Y-angle component.
+
+This graph defines the behavior when moving mouse and rotating player model. 
+
+<br>
+![Look Graph](https://github.com/user-attachments/assets/79f4a866-8704-4e36-a00a-738f83777b58)
+<br>
+
 
 
 
