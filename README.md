@@ -123,7 +123,7 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
 <br>
 <br>
 
-###C# Script PlayerMovement
+### C# Script PlayerMovement
 <br>
 <img width="1329" height="787" alt="PlayerMovement C# Script 1" src="https://github.com/user-attachments/assets/5316d19f-ffaf-4830-90f8-eb8d00b3b84e" />
 <br>
