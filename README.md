@@ -144,20 +144,19 @@ Next task is to execute the same player actions but using Visual Graphs, includi
 <br>
 <img width="616" height="577" alt="Variables" src="https://github.com/user-attachments/assets/90e1ca72-6d91-4d2d-96d9-54551db56285" />
 
-Move Action:
-1. Erase both Start() and Update() nodes.
-2. Place 'On Input System Event Vector 2' node in
-
-<br> 
-	Assign 'Move' action in 'Input Action' box
+*Move Action*
 <br>
 
-3. Place 2 Vector 2 Nodes Get X and Y in graph.
-4. Connect output of 'On Input System Event Vector 2' to their inputs
-5. Place 2 sets of 'MovementSpeed' and 'SprintValue' variables.  
-6. Multiply each set with Get X and Get Y and then multiply the results individually
-	by Get Delta Time.
-7. Place 'Transform Translate' and connect flow from 'On Input System Event Vector 2' and Get X result to x-component and Get Y result to the z-component. 
+- Erase both Start() and Update() nodes.
+- Place 'On Input System Event Vector 2' node in
+  - Assign 'Move' action in 'Input Action' box 
+- Place 2 Vector 2 Nodes Get X and Y in graph.
+- Connect output of 'On Input System Event Vector 2' to their inputs
+- Place 2 sets of 'MovementSpeed' and 'SprintValue' variables.
+- Multiply each set with Get X and Get Y and then multiply the results individually by Get Delta Time.
+- Place 'Transform Translate' and connect flow from 'On Input System Event Vector 2' and Get X result to x-component and Get Y result to the z component.
+
+
 
 <br>
 ![Movement Graph](https://github.com/user-attachments/assets/ec86cbc5-896d-4b8d-a26d-a744a494f53e)
