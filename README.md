@@ -121,25 +121,20 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
 
 8. Multiply 'sprintValue' in transform.Translate's x and z components.
 
-Merge the faces presented in the following image and extrude them at a distance of 15.  Afterwards, translate vertices from bottom of extruded surface edges to the outer edge of the created plane using the Vertex Position Editor offered by Pro-Builder.  
-
-
-
-Then, grab vertices close to plane edges in x direction and distance one segment at x = 55 and -55.  Take the other un-modified segments and set their distance in x-position to x = 50 and -50.  This is done for our future copies of the structures.  
-
-
-
-
-Next step, manipulate vertices for the front face of the structure to angle edges similar to the edges as shown in the figure.  Finally, delete any remaining faces in non-extruded segments in the plane.  (Does not include vertices translation-induced extrude.  Angle of edges in the x-positions have a distance between upper and lower vertices of 5 and in z-positions of 7.5.
-
-
 
 <br>
 <br>
- 
 
-Base level had its scaling values increased by 1.2 and 1.3 for *x* and *z*, respectively.  The second level remains at a 1,1,1 scale for all axis,  reduce x and z-scaling values by 0.2 and 0.25, respectively.  Afterwards, modify x-position of west and east edge vertices to align with bottom vertices of lower level.  Then modify the other set of vertices in current level to be at a distance 5 from the outer vertices.  (Include photo).  Do this for all levels.
+*C# Script PlayerMovement*
+<br>
+<img width="1329" height="787" alt="PlayerMovement C# Script 1" src="https://github.com/user-attachments/assets/5316d19f-ffaf-4830-90f8-eb8d00b3b84e" />
+<br>
+<img width="1536" height="485" alt="PlayerMovement C# Script 2" src="https://github.com/user-attachments/assets/c9161bf6-e2db-46c9-966b-c8a7467f9570" />
 
+
+*C# Script Gameplay*
+<br>
+![C# Gameplay](https://github.com/user-attachments/assets/c7fa1fbb-1261-4dff-a638-6de583112ce6)
 
 
 
