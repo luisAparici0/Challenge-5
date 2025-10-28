@@ -83,18 +83,18 @@ Next, we'll assign a 'Rigidbody' component to our character to implement physics
 <br>
 
 
-###C# Script
+### C# Script
 
 Then, we'll go to our 'PlayerMovement' script and do the following:
 <br>
 
-1. Create 'private float height' and apply [SerializeField]  
-2. Create 'public void OnJump() and have its parameter be 'InputValue button'
-3. Create 'private bool contact' for 'Player 1' collider detection
-3. Create 'Rigidbody _rigidbody' to apply force in y-direction for jump.
-4. Initialize _rigidbody in Awake()
-	_rigidbody = GetComponent<Rigidbody>();
-5. public void OnJump(InputValue button)
+- Create 'private float height' and apply [SerializeField]  
+- Create 'public void OnJump() and have its parameter be 'InputValue button'
+- Create 'private bool contact' for 'Player 1' collider detection
+- Create 'Rigidbody _rigidbody' to apply force in y-direction for jump.
+- Initialize _rigidbody in Awake()
+  - _rigidbody = GetComponent<Rigidbody>();
+- public void OnJump(InputValue button)
     {
         if (contact)  
         {
@@ -103,15 +103,13 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
     }
    <br>
 
-6. Use 'OnCollisionStay()' to check if 'Player 1' is in contact with a collider and 'OnCollisionExit()' to detect when 'Player 1' collider is not in contact with another collider.  These will change the value of 'contact' to indicate OnJump() method when to jump.
+- Use 'OnCollisionStay()' to check if 'Player 1' is in contact with a collider and 'OnCollisionExit()' to detect when 'Player 1' collider is not in contact with another collider.  These will change the value of 'contact' to indicate OnJump() method when to jump.
+  	- private void OnCollisionStay(Collision collision)   
+	  { contact = true; }
+	- private void OnCollisionStay(Collision collision)   
+	  { contact = true; } 
 
-* private void OnCollisionStay(Collision collision)   
-{ contact = true; } 
-
-* private void OnCollisionExit(Collision collision)   
-{ contact = false; }    
-
-7. Next, we're tasked to add a sprint action for our character.  This can be done using the OnSprint() message.  Create 'private float sprint' and serialize it and a 'private float sprintValue', which will be use to multiply movement values in transform.Translate in x-z directions.  Then, write the following code in OnSprint():
+- Next, we're tasked to add a sprint action for our character.  This can be done using the OnSprint() message.  Create 'private float sprint' and serialize it and a 'private float sprintValue', which will be use to multiply movement values in transform.Translate in x-z directions.  Then, write the following code in OnSprint():
 
     public void OnSprint(InputValue button)     
     {
@@ -119,7 +117,7 @@ Then, we'll go to our 'PlayerMovement' script and do the following:
         else{sprintValue = 1;}      
     }
 
-8. Multiply 'sprintValue' in transform.Translate's x and z components.
+- Multiply 'sprintValue' in transform.Translate's x and z components.
 
 
 <br>
