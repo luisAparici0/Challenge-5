@@ -75,6 +75,40 @@ Effect: The character moves faster only while Shift is held. Releasing Shift imm
 
 
 
+# Challenge 3
+
+## Description
+This project recreates an **Aztec pyramid (Templo Mayor)** on a terrain with different textures and natural elements.
+
+## Terrain Development Process
+
+We are tasked to recreate the main temple of capital city of ancient Tenōchtitlan, now known as Mexico City.  First, Pro-Builder package and Terrain Tools are downloaded to proceed.  Use Pro-Builder to create a plane that will act as the first level of the structure.  Modify position of created plane to (0,0,0) and modify the dimensions in x and z direction to 120 and 100, respectively.  Next, subdivide all faces pointing in the y-direction twice and move vertices in the orientation presented on the following image.  
+<br><br>
+
+
+
+*Base Plane Vertices*
+
+Merge the faces presented in the following image and extrude them at a distance of 15.  Afterwards, translate vertices from bottom of extruded surface edges to the outer edge of the created plane using the Vertex Position Editor offered by Pro-Builder.  
+
+
+
+Then, grab vertices close to plane edges in x direction and distance one segment at x = 55 and -55.  Take the other un-modified segments and set their distance in x-position to x = 50 and -50.  This is done for our future copies of the structures.  
+
+
+
+
+Next step, manipulate vertices for the front face of the structure to angle edges similar to the edges as shown in the figure.  Finally, delete any remaining faces in non-extruded segments in the plane.  (Does not include vertices translation-induced extrude.  Angle of edges in the x-positions have a distance between upper and lower vertices of 5 and in z-positions of 7.5.
+
+
+
+<br>
+<br>
+ 
+
+Base level had its scaling values increased by 1.2 and 1.3 for *x* and *z*, respectively.  The second level remains at a 1,1,1 scale for all axis,  reduce x and z-scaling values by 0.2 and 0.25, respectively.  Afterwards, modify x-position of west and east edge vertices to align with bottom vertices of lower level.  Then modify the other set of vertices in current level to be at a distance 5 from the outer vertices.  (Include photo).  Do this for all levels.
+
+
 
 
 
