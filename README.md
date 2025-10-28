@@ -75,14 +75,22 @@ Effect: The character moves faster only while Shift is held. Releasing Shift imm
 
 
 
-# Challenge 3
+# Challenge 5
 
 ## Description
-This project recreates an **Aztec pyramid (Templo Mayor)** on a terrain with different textures and natural elements.
+This document explains the modifications made to the PlayerMovement.cs script to implement jumping and sprinting actions for the player character, as well as its implementation using visual graphs.  
 
-## Terrain Development Process
+## Player Input Additions
 
-We are tasked to recreate the main temple of capital city of ancient Tenōchtitlan, now known as Mexico City.  First, Pro-Builder package and Terrain Tools are downloaded to proceed.  Use Pro-Builder to create a plane that will act as the first level of the structure.  Modify position of created plane to (0,0,0) and modify the dimensions in x and z direction to 120 and 100, respectively.  Next, subdivide all faces pointing in the y-direction twice and move vertices in the orientation presented on the following image.  
+Our player movement, rotation and firing actions were created and executed in class using the Input System Package.  In addition to these actions, we are tasked add a jump and sprint action for our player.  These can be implement by first creating our Actions in the created Input Action Asset.  First we'll add the 'Jump' action and set its 'Action Type' to 'Button'.  Next, create the 'Sprint' action with 'Action Type' as 'Button'.  We want to our action to send an input when the button is released to indicate the user stopped holding the sprint button.  This can be done by adding in the 'Interaction' tab a 'Press' interaction and change the 'Trigger Behavior' to 'Press and Release'.   
+
+<img width="662" height="532" alt="Jump Control" src="https://github.com/user-attachments/assets/afaac2d4-5346-4ebb-b4de-9155cd73d10c" />
+<br>
+<br>
+<img width="664" height="526" alt="Sprint Control" src="https://github.com/user-attachments/assets/44ec12a3-7d44-4d6a-8901-9d8f1c76a105" />
+
+
+Both of these can be easily implemented with the new Input System Package messages OnJump() and OnSprint(), which don't require additional coding to set up as opposed to custom events. 
 <br><br>
 
 
