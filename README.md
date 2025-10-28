@@ -159,6 +159,11 @@ Next task is to execute the same player actions but using Visual Graphs, includi
 
 
 <br>
+<img width="1206" height="627" alt="Move" src="https://github.com/user-attachments/assets/6dfc2ffc-de1b-41f8-a837-738906ebbcba" />
+
+
+<br>
+<br>
 ![Movement Graph](https://github.com/user-attachments/assets/ec86cbc5-896d-4b8d-a26d-a744a494f53e)
 <br>
 
@@ -193,8 +198,12 @@ This graph defines the behavior when the sprint button is being pressed.
 - Create an integer value node with value 1
 - Modify 'SprintValue' with a Set Variable and connect flow output from 'if-else' statement to Set Variable for 'SprintValue' and integer value node to this 'Set Variable'
 
-This graph defines the behavior when the sprint button is released and reverts movement speed to its default.  
+This graph defines the behavior when the sprint button is released and reverts movement speed to its default.
 
+<br>
+<img width="825" height="520" alt="Sprint" src="https://github.com/user-attachments/assets/29d3cf88-dc50-45b0-aaf1-2666ffa82246" />
+
+<br>
 <br>
 ![Sprint Pressed Released](https://github.com/user-attachments/assets/3ac65627-87e3-4253-a8fb-b8dda6f05cd3)
 <br>
@@ -213,6 +222,11 @@ This graph defines the behavior when the sprint button is released and reverts m
 
 This graph defines the behavior when moving mouse and rotating player model. 
 
+<br>
+<img width="920" height="304" alt="Look" src="https://github.com/user-attachments/assets/aa30aead-7949-4b83-9669-74d258de05a5" />
+
+
+<br>
 <br>
 ![Look Graph](https://github.com/user-attachments/assets/79f4a866-8704-4e36-a00a-738f83777b58)
 <br>
