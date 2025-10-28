@@ -53,7 +53,7 @@ Effect: The character moves faster only while Shift is held. Releasing Shift imm
 ### Input system Map
 <img width="500" alt="input system map" src="https://github.com/luisAparici0/Challenge-5/blob/main/images/inputSystemMap.png" />
 
-
+<br>
 
 ##Jump Control Player Input
 <img width="662" height="532" alt="Jump Control" src="https://github.com/user-attachments/assets/1d00686b-b7f8-4412-ae60-f8ea5283b01f" />
